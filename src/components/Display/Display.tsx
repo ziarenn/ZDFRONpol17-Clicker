@@ -1,8 +1,19 @@
 import React from "react";
 
-const Display = () => {
+interface Person {
+  firstName: string;
+  lastName: string;
+  age: number;
+}
+
+interface DisplayProps {
+  response: Person;
+}
+
+const Display = ({ response }: DisplayProps) => {
   return (
     <div>
+      <p>{response.firstName}</p>
       <p>123 to jest display</p>
     </div>
   );
