@@ -5,6 +5,7 @@ import Form from "./components/Form/Form";
 import Heading from "./components/Heading/Heading";
 import Manipulator from "./components/Manipulator/Manipulator";
 import Table from "./components/Table/Table";
+import TodoDisplay from "./components/TodoDisplay/TodoDisplay";
 // jsx - javascript expression
 // tsx
 function App() {
@@ -31,6 +32,7 @@ function App() {
       <Table />
       {/* props = properties = własciwości */}
       <Display response={response} />
+      <TodoDisplay todo={todo} />
     </div>
   );
 }
@@ -46,7 +48,3 @@ export default App;
 // 2. Stworzenie odpowiedniego interfejsu w komponencie który odbiera dane. Pamiętaj że nawet jeżeli przekazujesz tylko 1 prop, jest on obwijany obiektem.
 // 3. Odebranie propsów przez parametr w komponencie dziecku. Od razu destrukturyzuj parametr.
 // 4. Korzystaj z danych.
-
-// 1. Stwórz komponent TodoDisplay. W tym komponencie wyświetlaj diva. Sam komponent wyświetl w App.tsx
-// 2. Propsem przekaż obiekt todo do TodoDisplay.
-// 3. Wszystkie własności obiektu wyświetlaj w TodoDisplay w divie w osobnych paragrafach (<p>)
