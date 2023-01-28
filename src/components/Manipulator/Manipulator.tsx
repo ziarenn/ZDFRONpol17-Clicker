@@ -1,11 +1,24 @@
 import React from "react";
 
-const Manipulator = () => {
+interface ManipulatorProps {
+  count: number;
+  setCount: (value: number) => void;
+}
+
+const Manipulator = ({ count, setCount }: ManipulatorProps) => {
+  const incrementCount = () => {
+    setCount(count + 1);
+  };
+
+  const decrementCount = () => {
+    setCount(count - 1);
+  };
+
   return (
     <div>
       <h5>Zwiększ lub zmniejsz</h5>
-      <button>+</button>
-      <button>-</button>
+      <button onClick={incrementCount}>+</button>
+      <button onClick={decrementCount}>-</button>
     </div>
   );
 };

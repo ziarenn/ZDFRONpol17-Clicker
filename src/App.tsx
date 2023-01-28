@@ -32,18 +32,18 @@ function App() {
     console.log(count);
   };
 
-// 1. Zdefiniowanie stanu
-// 2. Przekazanie funkcji aktulizującej stan do komponentu niżej
-// 3. Wywołanie tam tej funkcji
-// 4. Zmienna stanowa w komponencie wyższym się aktulizuje
-// 5. Przeładowanie komponentu
-// 6. Wyświetlenie nowej wartości
+  // 1. Zdefiniowanie stanu
+  // 2. Przekazanie funkcji aktulizującej stan do komponentu niżej
+  // 3. Wywołanie tam tej funkcji
+  // 4. Zmienna stanowa w komponencie wyższym się aktulizuje
+  // 5. Przeładowanie komponentu
+  // 6. Wyświetlenie nowej wartości
 
   return (
     <div className="App">
       <Heading />
-      <CountDisplay />
-      <Manipulator />
+      <CountDisplay count={count} />
+      <Manipulator count={count} setCount={setCount} />
       <DisplayRandom setRandomNumber={setRandomNumber} />
       <p>{randomNumber}</p>
     </div>
@@ -81,3 +81,8 @@ export default App;
 // 6. Sam komponent DisplayRandom wyświetl w App.tsx
 
 // App.tsx tutaj jest stan randomNumber => setRandomNumber (w komponencie DisplayRandom wywołuje) => stan randomNumber jest aktualizowany w App.tsx
+
+// 1. Przekazanie stanu count i funkcji aktulizującej stan count do Manipulator.tsx
+// 2. W Manipulatorze stwórz 2 funkcje: incrementCount i decrementCount. W incrementCount wywołuj setCount w taki sposób żeby stan count zwiększał się o jeden (NIE COUNT++), korzystaj ze stanu count który również jest dostępny w tym komponencie. W decrementCount rób odwrotność, zmniejszaj stan count o 1.
+// 3. W Manipulatorze na przycisk "+" nałóż onClick, do onClicka podaj incrementCount, do onClicka na przycisku "-" podaj decrementCount.
+// 4. Z App.tsx do CountDisplay przekaż stan count. Wyświetlaj go w spanie w którym teraz mamy wyświetlone 0.

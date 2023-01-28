@@ -1,9 +1,5 @@
 import { useState } from "react";
 
-// interface x {
-//     setName: (value: string) => void
-// }
-
 interface DisplayRandomProps {
   setRandomNumber: (value: number) => void;
 }
