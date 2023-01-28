@@ -1,24 +1,34 @@
 import React from "react";
 
-const Table = () => {
+interface Person {
+  firstName: string;
+  lastName: string;
+  age: number;
+}
+
+interface TableProps {
+  response: Person;
+}
+
+const Table = ({ response }: TableProps) => {
   return (
     <table>
       <thead>
         <tr>
-          <th>a</th>
-          <th>b</th>
+          <th>Imie</th>
+          <th>{response.firstName}</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <th>c</th>
-          <th>d</th>
+          <th>Nazwisko</th>
+          <th>{response.lastName}</th>
         </tr>
       </tbody>
       <tfoot>
         <tr>
-          <th>e</th>
-          <th>f</th>
+          <th>Wiek</th>
+          <th>{response.age}</th>
         </tr>
       </tfoot>
     </table>
@@ -26,3 +36,6 @@ const Table = () => {
 };
 
 export default Table;
+//      imie | xyz
+// nazwisko  | xyz
+// wiek      | xyz

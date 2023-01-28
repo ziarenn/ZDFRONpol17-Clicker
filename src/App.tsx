@@ -29,7 +29,7 @@ function App() {
       <CountDisplay />
       <Manipulator />
       <Form />
-      <Table />
+      <Table response={response} />
       {/* props = properties = własciwości */}
       <Display response={response} />
       <TodoDisplay todo={todo} />
@@ -48,3 +48,6 @@ export default App;
 // 2. Stworzenie odpowiedniego interfejsu w komponencie który odbiera dane. Pamiętaj że nawet jeżeli przekazujesz tylko 1 prop, jest on obwijany obiektem.
 // 3. Odebranie propsów przez parametr w komponencie dziecku. Od razu destrukturyzuj parametr.
 // 4. Korzystaj z danych.
+
+// 1. Przekaż obiekt response do komponentu Table.tsx propsem. Nie zapomnij o odebraniu propsów, destrukturyzacji i intefejsie
+// 2. Wyświetl dane w tabeli (po lewej w tabeli imie nazwisko wiek, po prawej dane)
