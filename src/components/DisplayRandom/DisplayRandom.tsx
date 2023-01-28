@@ -1,8 +1,14 @@
 import { useState } from "react";
 
-const DisplayRandom = () => {
-  const [randomNumber, setRandomNumber] = useState(0);
+// interface x {
+//     setName: (value: string) => void
+// }
 
+interface DisplayRandomProps {
+  setRandomNumber: (value: number) => void;
+}
+
+const DisplayRandom = ({ setRandomNumber }: DisplayRandomProps) => {
   const updateRandomNumber = () => {
     const random = Math.random();
     setRandomNumber(random);
@@ -10,7 +16,6 @@ const DisplayRandom = () => {
 
   return (
     <>
-      <p>{randomNumber}</p>
       <button onClick={updateRandomNumber}>Update</button>
     </>
   );

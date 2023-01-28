@@ -20,6 +20,7 @@ function App() {
   // useState zwraca listę z 2 elementami: zmienną stanową (stan) i funkcję aktualizującą zmienną stanową (stan)
   // zmienną stanową możesz nazwać jak chcesz, w nazewnictwie funkcji aktualizującej zmienną stanową istnieje konwencja: set + nazwa zmiennej stanowej
   const [count, setCount] = useState(0);
+  const [randomNumber, setRandomNumber] = useState(0);
   // count = 5 ZLE
   // count++ ZLE
   // setCount(5) DOBRZE
@@ -31,12 +32,20 @@ function App() {
     console.log(count);
   };
 
+// 1. Zdefiniowanie stanu
+// 2. Przekazanie funkcji aktulizującej stan do komponentu niżej
+// 3. Wywołanie tam tej funkcji
+// 4. Zmienna stanowa w komponencie wyższym się aktulizuje
+// 5. Przeładowanie komponentu
+// 6. Wyświetlenie nowej wartości
+
   return (
     <div className="App">
       <Heading />
       <CountDisplay />
       <Manipulator />
-      <DisplayRandom />
+      <DisplayRandom setRandomNumber={setRandomNumber} />
+      <p>{randomNumber}</p>
     </div>
   );
 }
@@ -70,3 +79,5 @@ export default App;
 // };
 
 // 6. Sam komponent DisplayRandom wyświetl w App.tsx
+
+// App.tsx tutaj jest stan randomNumber => setRandomNumber (w komponencie DisplayRandom wywołuje) => stan randomNumber jest aktualizowany w App.tsx
